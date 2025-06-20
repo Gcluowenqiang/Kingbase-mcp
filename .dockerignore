@@ -1,0 +1,75 @@
+# Git相关文件
+.git
+.gitignore
+.gitattributes
+
+# Python相关
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# 虚拟环境
+venv/
+env/
+ENV/
+
+# IDE和编辑器
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# 操作系统
+.DS_Store
+Thumbs.db
+
+# 日志文件
+*.log
+logs/
+
+# 临时文件
+tmp/
+temp/
+*.tmp
+
+# 文档和示例（这些在容器中不需要）
+docs/
+*.md
+LICENSE
+CONTRIBUTING.md
+
+# 配置示例文件
+cursor-config-example.json
+
+# 测试文件
+tests/
+test_*.py
+*_test.py
+
+# 开发工具配置
+.pytest_cache/
+.coverage
+.tox/
+
+# Docker相关
+Dockerfile
+.dockerignore
+docker-compose*.yml 
