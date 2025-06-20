@@ -1,4 +1,5 @@
 # 人大金仓数据库 MCP 服务
+[![smithery badge](https://smithery.ai/badge/@Gcluowenqiang/kingbase-mcp)](https://smithery.ai/server/@Gcluowenqiang/kingbase-mcp)
 
 这是一个专为 Cursor 设计的人大金仓数据库 MCP (Model Context Protocol) 服务，提供表结构查询、文档生成和数据查询功能。
 
