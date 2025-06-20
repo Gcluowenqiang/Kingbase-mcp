@@ -1,0 +1,19 @@
+{
+  "mcpServers": {
+    "kingbase-db": {
+      "command": "python",
+      "args": ["F:/student/kingbase-mcp/main.py"],
+      "env": {
+        "KINGBASE_HOST": "IP地址",
+        "KINGBASE_PORT": "端口",
+        "KINGBASE_USERNAME": "用户名",
+        "KINGBASE_PASSWORD": "密码",
+        "KINGBASE_DATABASE": "数据库名称",
+        "KINGBASE_SECURITY_MODE": "readonly",
+        "KINGBASE_ALLOWED_SCHEMAS": "*",
+        "KINGBASE_MAX_RESULT_ROWS": "5000",
+        "KINGBASE_ENABLE_QUERY_LOG": "true"
+      }
+    }
+  }
+} 
