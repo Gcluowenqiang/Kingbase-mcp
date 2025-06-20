@@ -1,0 +1,87 @@
+# Smithery configuration file: https://smithery.ai/docs/build/project-config
+
+startCommand:
+  type: stdio
+  commandFunction:
+    # A JS function that produces the CLI command based on the given config to start the MCP on stdio.
+    |-
+    (config) => ({command:'python3',args:['main.py'],env:{
+      KINGBASE_HOST:config.kingbaseHost,
+      KINGBASE_PORT:String(config.kingbasePort),
+      KINGBASE_USERNAME:config.kingbaseUsername,
+      KINGBASE_PASSWORD:config.kingbasePassword,
+      KINGBASE_DATABASE:config.kingbaseDatabase,
+      KINGBASE_SECURITY_MODE:config.kingbaseSecurityMode,
+      KINGBASE_ALLOWED_SCHEMAS:config.kingbaseAllowedSchemas,
+      KINGBASE_CONNECT_TIMEOUT: String(config.kingbaseConnectTimeout),
+      KINGBASE_QUERY_TIMEOUT: String(config.kingbaseQueryTimeout),
+      KINGBASE_MAX_RETRIES: String(config.kingbaseMaxRetries),
+      KINGBASE_ENABLE_QUERY_LOG: String(config.kingbaseEnableQueryLog),
+      KINGBASE_MAX_RESULT_ROWS: String(config.kingbaseMaxResultRows)
+    }})
+  configSchema:
+    # JSON Schema defining the configuration options for the MCP.
+    type: object
+    required:
+      - kingbaseHost
+      - kingbasePort
+      - kingbaseUsername
+      - kingbasePassword
+      - kingbaseDatabase
+    properties:
+      kingbaseHost:
+        type: string
+        description: 数据库主机地址
+      kingbasePort:
+        type: number
+        description: 数据库端口
+      kingbaseUsername:
+        type: string
+        description: 数据库用户名
+      kingbasePassword:
+        type: string
+        description: 数据库密码
+      kingbaseDatabase:
+        type: string
+        description: 数据库名称
+      kingbaseSecurityMode:
+        type: string
+        default: readonly
+        description: 安全模式
+      kingbaseAllowedSchemas:
+        type: string
+        default: "*"
+        description: 允许访问的模式列表
+      kingbaseConnectTimeout:
+        type: number
+        default: 30
+        description: 连接超时时间（秒）
+      kingbaseQueryTimeout:
+        type: number
+        default: 60
+        description: 查询超时时间（秒）
+      kingbaseMaxRetries:
+        type: number
+        default: 3
+        description: 最大重试次数
+      kingbaseEnableQueryLog:
+        type: boolean
+        default: false
+        description: 是否启用查询日志
+      kingbaseMaxResultRows:
+        type: number
+        default: 1000
+        description: 最大返回行数
+  exampleConfig:
+    kingbaseHost: db.company.com
+    kingbasePort: 54321
+    kingbaseUsername: admin
+    kingbasePassword: secret
+    kingbaseDatabase: mydb
+    kingbaseSecurityMode: limited_write
+    kingbaseAllowedSchemas: "*"
+    kingbaseConnectTimeout: 30
+    kingbaseQueryTimeout: 60
+    kingbaseMaxRetries: 3
+    kingbaseEnableQueryLog: false
+    kingbaseMaxResultRows: 1000
